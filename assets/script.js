@@ -23,7 +23,11 @@ function colorAdjust() {
     }
   });
 }
-
+// reset local storage function
+function saveReset() {
+  localStorage.clear();
+  window.location.reload();
+}
 // event listeners
 // show current date
 $("#currentDay").text(moment().format("MMMM Do, YYYY"));
@@ -38,7 +42,11 @@ $("#hour14 .js-task").val(localStorage.getItem("hour14"));
 $("#hour15 .js-task").val(localStorage.getItem("hour15"));
 $("#hour16 .js-task").val(localStorage.getItem("hour16"));
 $("#hour17 .js-task").val(localStorage.getItem("hour17"));
-// user clicks save button
+
+// event listner save button
 $(".js-Btn").on("click", saveTask);
+
+// event listener reset button
+$(".reset-Btn").on("click", saveReset);
 // initialize colorAdjust
 colorAdjust();
